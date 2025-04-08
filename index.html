@@ -1,20 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>Your Handyman Services</title>
+  <title>您的家政服务</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
-      background-color: #f7f7f7;
+      background-color: #f4f4f4; /* 设置默认背景颜色 */
+      color: #333; /* 设置默认文本颜色 */
+      position: relative; /* 为伪元素定位 */
+      z-index: 0; /* 确保内容在背景图上方 */
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/background.png'); /* 应用背景图 */
+      background-size: cover; /* 确保背景图覆盖整个页面 */
+      background-repeat: no-repeat; /* 防止背景图重复 */
+      background-attachment: fixed; /* 背景图在滚动时固定 */
+      background-position: center; /* 居中背景图 */
+      
+      opacity: 0.8; /* 设置透明度 */
+      z-index: -1; /* 确保背景图在内容后面 */
     }
     header {
-      background-color: #007bff;
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-top: 20px;
+    }
+    h1 {
+      margin: 10px 0 0;
+    }
+    nav {
+      margin: 20px 0;
     }
     nav a {
       color: white;
@@ -22,47 +52,75 @@
       text-decoration: none;
       font-weight: bold;
     }
-    section {
-      padding: 50px 20px;
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .review {
+      border-top: 1px solid #ccc;
+      margin-top: 20px;
+      padding-top: 10px;
     }
     footer {
       background-color: #333;
       color: white;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+      text-align: center;
+      padding: 15px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Your Friendly Handyman</h1>
+    <h1> 哒哒龙🐲 家政服务</h1>
+    <p>可靠 • 实惠 • 技术精湛</p>
+    <img src="images/header.png" alt="您的照片">
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#">首页</a>
+      <a href="#">服务</a>
+      <a href="#">项目</a>
+      <a href="#">联系我们</a>
     </nav>
   </header>
 
-  <section>
-    <h2>Reliable, Affordable, Professional</h2>
-    <p>We help you fix anything — from leaky faucets to furniture assembly!</p>
-    <a href="#"><button>Contact Now</button></a>
-  </section>
+  <div class="section">
+    <h2>📞 联系信息</h2>
+    <p>📱 电话: 740-590-6298</p>
+    <p>📧 微信: <img src="images/wechat.png"  alt="微信二维码" style="width: 100px;"></p>
+  </div>
+
+  <div class="section project">
+    <h2>🛠️ 过去的项目</h2>
+    <img src="https://via.placeholder.com/700x400" alt="项目图片">
+    <p>🔨 修理车库门 – Allen, TX – 2025年1月</p>
+    <p>🪑 组装宜家家具 – Plano, TX – 2025年2月</p>
+    <p>🚿 更换浴室水龙头 – Allen, TX – 2025年3月</p>
+  </div>
+
+  <div class="section">
+    <h2>🌟 客户评价</h2>
+    <div class="review">
+      <p><strong>玛丽 C.</strong>: ⭐⭐⭐⭐⭐</p>
+      <p>"他快速、专业且友好。强烈推荐！"</p>
+    </div>
+    <div class="review">
+      <p><strong>约翰 T.</strong>: ⭐⭐⭐⭐☆</p>
+      <p>"厨房水槽修得很好。还会再次雇佣他。"</p>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 Your Handyman Service. All rights reserved.</p>
+    <p>© 2025 您的家政服务网站</p>
   </footer>
+
 </body>
 </html>
